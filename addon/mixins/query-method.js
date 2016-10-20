@@ -1,14 +1,15 @@
-import Ember from 'ember';
+import Mixin from 'ember-metal/mixin';
 import { bind } from 'ember-runloop';
 import get from 'ember-metal/get';
+import getOwner from 'ember-getowner-polyfill';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   targetController: 'application',
   factory: '',
   method: '',
   
   onDidTransition() {
-    let factory = Ember.getOwner(this).lookup(get(this, 'factory'));
+    let factory = getOwner(this).lookup(get(this, 'factory'));
     factory[get(this, 'method')](...arguments);
   },
   onWillTransition() {

@@ -48,6 +48,7 @@
     "mixin"
   ],
   "dependencies": {
+    "ember-getowner-polyfill": "1.0.1",
     "ember-cli-babel": "^5.1.6"
   },
   "ember-addon": {
