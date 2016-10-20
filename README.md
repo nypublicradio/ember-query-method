@@ -1,5 +1,7 @@
 # ember-query-method
 
+![Download count all time](https://img.shields.io/npm/dt/ember-query-method.svg) [![npm version](https://badge.fury.io/js/ember-query-method.svg)](http://badge.fury.io/js/ember-query-method) [![CircleCI](https://circleci.com/gh/nypublicradio/ember-query-method.svg?style=shield)](https://circleci.com/gh/nypublicradio/ember-query-method) [![Ember Observer Score](http://emberobserver.com/badges/ember-query-method.svg)](http://emberobserver.com/addons/ember-query-method)
+
 Run a method when a query parameter is detected.
 
 ## Installation
