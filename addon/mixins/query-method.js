@@ -21,9 +21,14 @@ export default Ember.Mixin.create({
   actions: {
     didTransition() {
       let methodKey = get(this, 'method');
-      let methodArg = this.controllerFor(this.get('targetController')).get(methodKey);
-      if (methodArg) {
-        bind(this, get(this, 'onDidTransition'))(methodArg);
+      let targetController = this.controllerFor(this.get('targetController'));
+      
+      // if methodKey is left as an empty string, this look up will return the controller itself, which is not what we want
+      if (methodKey) {
+        let methodArg = targetController.get(methodKey);
+        if (methodArg) {
+          bind(this, get(this, 'onDidTransition'))(methodArg);
+        }
       }
       
       let ret = this._super(...arguments);
